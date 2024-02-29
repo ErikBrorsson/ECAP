@@ -3,8 +3,7 @@
 ## Abstract
 We consider unsupervised domain adaptation (UDA) for semantic
 segmentation in which the model is trained on a labeled source
-dataset and adapted to an unlabeled target dataset. Unfortu-
-nately, current self-training methods are susceptible to misclassified
+dataset and adapted to an unlabeled target dataset. Unfortunately, current self-training methods are susceptible to misclassified
 pseudo-labels resulting from erroneous predictions. Since certain
 classes are typically associated with less reliable predictions in
 UDA, reducing the impact of such pseudo-labels without skewing
@@ -20,9 +19,18 @@ precedented performance of 69.1 mIoU on the Synthia $\rightarrow$ Cityscapes
 benchmark.
 
 ## Results
-To come.
+The two tables below show the main results presented in the paper, which demonstrate the efficacy of our method on synthetic-to-real UDA.
+<img src=resources/sota_comparison.png width=1200>
+<img src=resources/complementary_results.png width=600>
+
 ## Checkpoints
-To come.
+* [MIC+ECAP GTA->Cityscapes](https://drive.google.com/file/d/1IFWE8zKBpsOI37NQ8tYLK9LMnvjlGKPl/view?usp=sharing)
+
+* [MIC+ECAP Synthia->Cityscapes](https://drive.google.com/file/d/1upQhfPPtdNpjPr6tmfXEAiIRAF50iZx-/view?usp=sharing)
+
+* [MIC+ECAP Cityscapes->DarkZurich](https://drive.google.com/file/d/1Yxzx432Lt97mwxo1vxgzzSQOKVTbHC31/view?usp=drive_link)
+
+* [MIC+ECAP Cityscapes->ACDC](https://drive.google.com/file/d/1nAKQu7uxJ3o2QdoIBh0UVaVeGl_32GxH/view?usp=drive_link)
 
 # Instructions
 ECAP is implemented on top of the code base of HRDA and MIC.
@@ -33,9 +41,9 @@ In each of the directories hrda and mic, we include the relevant configuration f
 python run_experiments.py --config configs/ecap/table1_sota/mic_ecap_gta0.py
 
 ## Testing
-After downloading, for example, the checkpoint for HRDA+ECAP on GTA and extracting the .tar.gz file under hrda/work_dirs, the model can be tested by running the following command.
+After downloading, for example, the checkpoint MIC+ECAP GTA->Cityscapes and extracting the .tar.gz file under mic/work_dirs, the model can be tested by running the following command.
 
-sh test.sh work_dirs/hrda_ecap_gta
+sh test.sh work_dirs/*targz_filename*
 
 
 # Ackowledgement
